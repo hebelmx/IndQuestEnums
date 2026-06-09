@@ -9,8 +9,10 @@
     
     <!-- NuGet Package Metadata -->
     <PackageId>IndQuestEnums</PackageId>
-    <Version>1.0.0</Version>
-    <Authors>IndQuest</Authors>
+    <Version>1.0.1</Version>
+    <Authors>Abel Briones; Exxerpro Solutions SA de CV</Authors>
+    <Company>Exxerpro Solutions SA de CV</Company>
+    <Copyright>Copyright (c) 2026 Exxerpro Solutions SA de CV</Copyright>
     <Description>Owned NuGet package providing the house SmartEnum base (EnumModel).</Description>
     <PackageTags>smartenum;enum;enummodel;indquest</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>

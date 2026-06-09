@@ -24,10 +24,11 @@ x86/
 [AR][Mm]/
 [AR][Mm]64/
 bld/
-[Bin]/
-[Obj]/
-[Log]/
-[Logs]/
+[Bb]in/
+[Oo]bj/
+[Bb]uild/
+[Ll]og/
+[Ll]ogs/
 
 # Visual Studio 2015/2017 cache directory
 .vs/
@@ -69,6 +70,10 @@ pdf/
 
 # EF Core Migrations
 # *.designer.cs
+
+# Stryker.NET mutation testing output
+StrykerOutput/
+**/StrykerOutput/
 
 # Backup files
 Backup/

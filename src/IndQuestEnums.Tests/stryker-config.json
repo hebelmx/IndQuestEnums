@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/stryker-mutator/stryker-net/master/src/Stryker.Core/Stryker.Core/Schemas/stryker-config.json",
+  "stryker-config": {
+    "project-info": {
+      "name": "IndQuestEnums",
+      "module": "IndQuestEnums"
+    },
+    "project": "IndQuestEnums.csproj",
+    "test-projects": [
+      "IndQuestEnums.Tests.csproj"
+    ],
+    "test-runner": "mtp",
+    "mutate": [
+      "**/EnumModel.cs"
+    ],
+    "coverage-analysis": "perTest",
+    "reporters": [
+      "html",
+      "progress",
+      "cleartext"
+    ],
+    "thresholds": {
+      "high": 90,
+      "low": 80,
+      "break": 0
+    },
+    "concurrency": 4,
+    "mutation-level": "Standard"
+  }
+}
