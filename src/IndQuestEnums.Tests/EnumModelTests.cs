@@ -178,6 +178,34 @@ public class EnumModelTests
     }
 
     [Fact]
+    public void ComparisonOperators_WorkCorrectly()
+    {
+        // Arrange
+        StatusEnum active = StatusEnum.Active;     // Value = 1
+        StatusEnum inactive = StatusEnum.Inactive; // Value = 2
+        StatusEnum? nullEnum = null;
+
+        // Act & Assert
+        (active == StatusEnum.Active).ShouldBeTrue();
+        (active != inactive).ShouldBeTrue();
+        (active < inactive).ShouldBeTrue();
+        (active <= inactive).ShouldBeTrue();
+        (active <= StatusEnum.Active).ShouldBeTrue();
+        (inactive > active).ShouldBeTrue();
+        (inactive >= active).ShouldBeTrue();
+        (inactive >= StatusEnum.Inactive).ShouldBeTrue();
+
+        // Null comparisons
+        (nullEnum == null).ShouldBeTrue();
+        (active == null).ShouldBeFalse();
+        (null == active).ShouldBeFalse();
+        (nullEnum < active).ShouldBeTrue();
+        (active > nullEnum).ShouldBeTrue();
+        (nullEnum <= active).ShouldBeTrue();
+        (active >= nullEnum).ShouldBeTrue();
+    }
+
+    [Fact]
     public void EFConverter_ConvertsValueCorrectly()
     {
         // Arrange

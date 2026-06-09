@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>IndQuestEnums</id>
+    <version>1.0.0</version>
+    <authors>IndQuest</authors>
+    <license type="file">LICENSE.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>Icon.png</icon>
+    <readme>README.md</readme>
+    <description>Owned NuGet package providing the house SmartEnum base (EnumModel).</description>
+    <tags>smartenum enum enummodel indquest</tags>
+    <repository type="git" url="https://github.com/hebelmx/IndQuestEnums.git" branch="refs/heads/dev" commit="82465b6b3c4fb13b2b4d96d7b7e75621cc910dde" />
+    <dependencies>
+      <group targetFramework="net10.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="E:\Dynamic\IndFusion\IndQuestEnums\src\IndQuestEnums\bin\Release\net10.0\IndQuestEnums.dll" target="lib\net10.0\IndQuestEnums.dll" />
+    <file src="E:\Dynamic\IndFusion\IndQuestEnums\src\IndQuestEnums\bin\Release\net10.0\IndQuestEnums.xml" target="lib\net10.0\IndQuestEnums.xml" />
+    <file src="E:\Dynamic\IndFusion\IndQuestEnums\README.md" target="\README.md" />
+    <file src="E:\Dynamic\IndFusion\IndQuestEnums\LICENSE.txt" target="\LICENSE.txt" />
+    <file src="E:\Dynamic\IndFusion\IndQuestEnums\src\Icon.png" target="\Icon.png" />
+  </files>
+</package>

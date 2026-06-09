@@ -1,0 +1,14 @@
+E:\Dynamic\IndFusion\IndQuestEnums\src\IndQuestEnums\obj\Release\net10.0\IndQuestEnums.GeneratedMSBuildEditorConfig.editorconfig
+E:\Dynamic\IndFusion\IndQuestEnums\src\IndQuestEnums\obj\Release\net10.0\IndQuestEnums.AssemblyInfoInputs.cache
+E:\Dynamic\IndFusion\IndQuestEnums\src\IndQuestEnums\obj\Release\net10.0\IndQuestEnums.AssemblyInfo.cs
+E:\Dynamic\IndFusion\IndQuestEnums\src\IndQuestEnums\obj\Release\net10.0\IndQuestEnums.csproj.CoreCompileInputs.cache
+E:\Dynamic\IndFusion\IndQuestEnums\src\IndQuestEnums\obj\Release\net10.0\IndQuestEnums.sourcelink.json
+E:\Dynamic\IndFusion\IndQuestEnums\src\IndQuestEnums\obj\Release\net10.0\IndQuestEnums.xml
+E:\Dynamic\IndFusion\IndQuestEnums\src\IndQuestEnums\bin\Release\net10.0\IndQuestEnums.deps.json
+E:\Dynamic\IndFusion\IndQuestEnums\src\IndQuestEnums\bin\Release\net10.0\IndQuestEnums.dll
+E:\Dynamic\IndFusion\IndQuestEnums\src\IndQuestEnums\bin\Release\net10.0\IndQuestEnums.pdb
+E:\Dynamic\IndFusion\IndQuestEnums\src\IndQuestEnums\bin\Release\net10.0\IndQuestEnums.xml
+E:\Dynamic\IndFusion\IndQuestEnums\src\IndQuestEnums\obj\Release\net10.0\IndQuestEnums.dll
+E:\Dynamic\IndFusion\IndQuestEnums\src\IndQuestEnums\obj\Release\net10.0\refint\IndQuestEnums.dll
+E:\Dynamic\IndFusion\IndQuestEnums\src\IndQuestEnums\obj\Release\net10.0\IndQuestEnums.pdb
+E:\Dynamic\IndFusion\IndQuestEnums\src\IndQuestEnums\obj\Release\net10.0\ref\IndQuestEnums.dll

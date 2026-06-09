@@ -143,8 +143,50 @@ public abstract class EnumModel : IComparable, IEquatable<EnumModel>
     public override int GetHashCode() => HashCode.Combine(this.GetType(), this.Value);
 
     /// <inheritdoc/>
-    public int CompareTo(object? other) =>
-        other is EnumModel enumeration ? this.Value.CompareTo(enumeration.Value) : 1;
+    public int CompareTo(object? obj) =>
+        obj is EnumModel enumeration ? this.Value.CompareTo(enumeration.Value) : 1;
+
+    /// <summary>Compares two instances for equality.</summary>
+    /// <param name="left">The first instance.</param>
+    /// <param name="right">The second instance.</param>
+    /// <returns><see langword="true"/> if the instances are equal; otherwise, <see langword="false"/>.</returns>
+    public static bool operator ==(EnumModel? left, EnumModel? right) =>
+        left is null ? right is null : left.Equals(right);
+
+    /// <summary>Compares two instances for inequality.</summary>
+    /// <param name="left">The first instance.</param>
+    /// <param name="right">The second instance.</param>
+    /// <returns><see langword="true"/> if the instances are not equal; otherwise, <see langword="false"/>.</returns>
+    public static bool operator !=(EnumModel? left, EnumModel? right) =>
+        !(left == right);
+
+    /// <summary>Determines if the first instance is less than the second instance.</summary>
+    /// <param name="left">The first instance.</param>
+    /// <param name="right">The second instance.</param>
+    /// <returns><see langword="true"/> if the first instance is less than the second; otherwise, <see langword="false"/>.</returns>
+    public static bool operator <(EnumModel? left, EnumModel? right) =>
+        left is null ? right is not null : left.CompareTo(right) < 0;
+
+    /// <summary>Determines if the first instance is less than or equal to the second instance.</summary>
+    /// <param name="left">The first instance.</param>
+    /// <param name="right">The second instance.</param>
+    /// <returns><see langword="true"/> if the first instance is less than or equal to the second; otherwise, <see langword="false"/>.</returns>
+    public static bool operator <=(EnumModel? left, EnumModel? right) =>
+        left is null || left.CompareTo(right) <= 0;
+
+    /// <summary>Determines if the first instance is greater than the second instance.</summary>
+    /// <param name="left">The first instance.</param>
+    /// <param name="right">The second instance.</param>
+    /// <returns><see langword="true"/> if the first instance is greater than the second; otherwise, <see langword="false"/>.</returns>
+    public static bool operator >(EnumModel? left, EnumModel? right) =>
+        left is not null && left.CompareTo(right) > 0;
+
+    /// <summary>Determines if the first instance is greater than or equal to the second instance.</summary>
+    /// <param name="left">The first instance.</param>
+    /// <param name="right">The second instance.</param>
+    /// <returns><see langword="true"/> if the first instance is greater than or equal to the second; otherwise, <see langword="false"/>.</returns>
+    public static bool operator >=(EnumModel? left, EnumModel? right) =>
+        left is null ? right is null : left.CompareTo(right) >= 0;
 
     /// <summary>Deconstructs the instance into its components.</summary>
     /// <param name="value">The integer value.</param>

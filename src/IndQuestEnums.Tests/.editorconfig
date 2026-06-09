@@ -1,0 +1,8 @@
+[*.cs]
+
+# CA1707: Identifiers should not contain underscores (allowed in unit tests for readability)
+dotnet_diagnostic.CA1707.severity = none
+
+# CA1711: Rename type name so that it does not end in 'Enum' (allowed for test enums)
+dotnet_diagnostic.CA1711.severity = none
+

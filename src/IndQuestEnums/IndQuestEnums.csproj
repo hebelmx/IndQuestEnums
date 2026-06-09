@@ -6,10 +6,25 @@
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    
+    <!-- NuGet Package Metadata -->
+    <PackageId>IndQuestEnums</PackageId>
     <Version>1.0.0</Version>
     <Authors>IndQuest</Authors>
     <Description>Owned NuGet package providing the house SmartEnum base (EnumModel).</Description>
-    <PackageId>IndQuestEnums</PackageId>
+    <PackageTags>smartenum;enum;enummodel;indquest</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageIcon>Icon.png</PackageIcon>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\LICENSE.txt" Pack="true" PackagePath="\" />
+    <None Include="..\Icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
 </Project>
