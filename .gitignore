@@ -1,0 +1,77 @@
+## Ignore Visual Studio Temporary Files and Build Results
+## Ref: https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+# Mono auto generated files
+mono_crash.*
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Release]/
+[Releases]/
+x64/
+x86/
+[AR][Mm]/
+[AR][Mm]64/
+bld/
+[Bin]/
+[Obj]/
+[Log]/
+[Logs]/
+
+# Visual Studio 2015/2017 cache directory
+.vs/
+# Visual Studio 2019/2022 cache directory
+.vs/*
+
+# MSTest test Results
+[Test]Result*/
+[Build]Log.*
+
+# NUnit
+/*.VisualState.xml
+/*.suo
+
+# OpenCover
+pdf/
+
+# xUnit
+*.html
+*.xml
+
+# Roslyn cache directories
+.csc/
+
+# JetBrains Rider
+.idea/
+.rider/
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+# If using NuGet Legacy Mode, these are in project folder
+# (uncomment if needed)
+#**/packages.config
+
+# EF Core Migrations
+# *.designer.cs
+
+# Backup files
+Backup/
+
+# Directory-level settings
+.DS_Store
