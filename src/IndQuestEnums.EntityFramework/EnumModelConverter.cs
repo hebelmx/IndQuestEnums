@@ -1,3 +1,4 @@
+using IndQuestEnums;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IndQuestEnums.EntityFramework;

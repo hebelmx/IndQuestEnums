@@ -1,3 +1,4 @@
+using IndQuestEnums;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace IndQuestEnums.EntityFramework;
