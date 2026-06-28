@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [dev, main]
+  pull_request:
+    branches: [dev, main]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restore
+        run: dotnet restore src/IndQuestEnums.sln
+      - name: Build
+        run: dotnet build src/IndQuestEnums.sln -c Release --no-restore
+      - name: Test
+        run: dotnet test src/IndQuestEnums.sln -c Release --no-build
+
+  mutation:
+    runs-on: ubuntu-latest
+    needs: build-test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restore tools
+        run: dotnet tool restore
+      - name: Mutate core (EnumModel + JSON converter)
+        working-directory: src/IndQuestEnums.Tests
+        run: dotnet stryker -f stryker-config.json
+      - name: Mutate EF companion
+        working-directory: src/IndQuestEnums.Tests
+        run: dotnet stryker -f stryker-config.ef.json
+      - name: Upload mutation reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stryker-reports
+          path: src/IndQuestEnums.Tests/StrykerOutput/**/reports/*.html
+          if-no-files-found: warn
