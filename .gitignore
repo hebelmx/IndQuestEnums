@@ -80,3 +80,9 @@ Backup/
 
 # Directory-level settings
 .DS_Store
+
+# BMAD generated output artifacts (planning/implementation artifacts, reports)
+_bmad-output/
+
+# SDD (subagent-driven-development) scratch workspace
+.superpowers/
