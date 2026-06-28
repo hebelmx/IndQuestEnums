@@ -67,7 +67,9 @@ Hoist common properties currently duplicated across the three csproj files:
 - `GenerateDocumentationFile=true` only on packable projects — guard with a
   property (`IsPackable`) so test/benchmark projects don't require XML docs.
 - Fix the `Authors=IndQuest` vs Exxerpro copyright mismatch (AGENTS.md gotcha):
-  set authors/company to the intended Exxerpro Solutions value.
+  set `Authors`/`Company` to `Exxerpro Solutions SA de CV` (the legal name),
+  `Copyright` to `© 2026 Exxerpro Solutions SA de CV`, and set
+  `PackageProjectUrl` / a homepage mention to `https://exxerpro.com`.
 
 Per-csproj files keep only what is genuinely package-specific (`PackageId`,
 `Description`, `PackageTags`, project references).
@@ -101,12 +103,17 @@ PowerShell commands in AGENTS.md.
 
 - `.github/CONTRIBUTING.md` — build/test/pack/mutation commands, branch model
   (`dev` → `main`), warnings-as-errors + TDD expectations, ADR pointer.
-- `.github/SECURITY.md` — supported versions + private disclosure contact.
+- `.github/SECURITY.md` — supported versions + private disclosure contact
+  (`abel.briones@exxerpro.com`).
 - `.github/CODE_OF_CONDUCT.md` — Contributor Covenant 2.1.
 - `CHANGELOG.md` (root) — Keep a Changelog format, seeded with the 1.0.0 → 1.0.1
   → 1.1.0 history visible in git + ADR-0002.
 - `.github/PULL_REQUEST_TEMPLATE.md` — checklist (tests, docs, ADR, changelog).
 - `.github/ISSUE_TEMPLATE/bug_report.md` + `feature_request.md`.
+- **Exxerpro mention** (non-commercial): a short maintainer/credits line linking
+  [Exxerpro Solutions](https://exxerpro.com) in the `README.md` footer and
+  `CONTRIBUTING.md`, plus `PackageProjectUrl=https://exxerpro.com` in package
+  metadata. Just a mention of who maintains it — not a marketing blurb.
 
 ## 5. Mutation testing (extend)
 
