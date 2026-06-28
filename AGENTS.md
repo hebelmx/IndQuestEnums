@@ -6,7 +6,7 @@ Context for AI agents working in this repository. Read this first; it captures t
 - **Authors / owners:** Abel Briones / Exxerpro Solutions SA de CV
 - **Repo root:** `E:\Dynamic\IndFusion\IndQuestEnums`
 - **License:** MIT (`LICENSE.txt`) — © 2026 Exxerpro Solutions SA de CV
-- **Decision record:** `ADR-0001.md` (authoritative copy lives in the EMIP repo at
+- **Decision record:** `docs/architecture/adr/ADR-0001.md` (authoritative copy lives in the EMIP repo at
   `docs/architecture/adr/`)
 
 ## What this is
@@ -106,7 +106,8 @@ and a `public static readonly Invalid` field (graceful unmatched resolution).
 IndQuestEnums/
 ├── AGENTS.md                  # this file
 ├── README.md                  # human-facing overview
-├── ADR-0001.md                # the decision record
+├── docs/
+│   └── architecture/adr/      # ADR-0001.md, ADR-0002.md
 ├── LICENSE.txt                # MIT
 ├── global.json
 └── src/

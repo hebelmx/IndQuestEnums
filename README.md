@@ -6,8 +6,8 @@ and future solutions. Named for consistency with its sibling `IndQuestResults`.
 
 > **Seed folder.** This directory was scaffolded as a starting point. Build the real package /
 > solution from here in a fresh session, then publish to nuget.org (or the house private feed).
-> The decision and rationale are recorded in `ADR-0001` (copied here as `ADR-0001.md`; the
-> authoritative copy lives in the EMIP repo at `docs/architecture/adr/`).
+> The decision and rationale are recorded in [`ADR-0001`](docs/architecture/adr/ADR-0001.md); the
+> authoritative copy lives in the EMIP repo at `docs/architecture/adr/`.
 
 ## Why this package exists
 
@@ -37,7 +37,8 @@ A third copy would keep diverging. This package consolidates the **bug-fixed, O(
 ```
 IndQuestEnums/
 ├── README.md
-├── ADR-0001.md
+├── docs/
+│   └── architecture/adr/      # ADR-0001.md, ADR-0002.md
 ├── src/
 │   └── EnumModel.cs                         # ← provided (core; dependency-free)
 ├── IndQuestEnums/                           # core csproj (net10.0, no deps)
