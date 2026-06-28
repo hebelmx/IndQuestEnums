@@ -10,7 +10,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Repo governance: GitHub Actions CI, community/policy docs, central build config.
 - BenchmarkDotNet performance project for the hot lookup/convert paths.
 - Stryker mutation coverage for the JSON converter and the EF companion.
-- BMAD methodology (`.bmad-core/`).
+- BMAD methodology v6 (agent skills in `.claude/skills/`, module config in `_bmad/`).
 
 ### Changed
 - ADRs moved to `docs/architecture/adr/`.
