@@ -69,7 +69,7 @@ Hoist common properties currently duplicated across the three csproj files:
 - Fix the `Authors=IndQuest` vs Exxerpro copyright mismatch (AGENTS.md gotcha):
   set `Authors`/`Company` to `Exxerpro Solutions SA de CV` (the legal name),
   `Copyright` to `© 2026 Exxerpro Solutions SA de CV`, and set
-  `PackageProjectUrl` / a homepage mention to `https://exxerpro.com`.
+  `PackageProjectUrl` / a homepage mention to `https://www.exxerpro.com`.
 
 Per-csproj files keep only what is genuinely package-specific (`PackageId`,
 `Description`, `PackageTags`, project references).
@@ -111,8 +111,8 @@ PowerShell commands in AGENTS.md.
 - `.github/PULL_REQUEST_TEMPLATE.md` — checklist (tests, docs, ADR, changelog).
 - `.github/ISSUE_TEMPLATE/bug_report.md` + `feature_request.md`.
 - **Exxerpro mention** (non-commercial): a short maintainer/credits line linking
-  [Exxerpro Solutions](https://exxerpro.com) in the `README.md` footer and
-  `CONTRIBUTING.md`, plus `PackageProjectUrl=https://exxerpro.com` in package
+  [Exxerpro Solutions](https://www.exxerpro.com) in the `README.md` footer and
+  `CONTRIBUTING.md`, plus `PackageProjectUrl=https://www.exxerpro.com` in package
   metadata. Just a mention of who maintains it — not a marketing blurb.
 
 ## 5. Mutation testing (extend)
