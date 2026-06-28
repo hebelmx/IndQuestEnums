@@ -99,3 +99,8 @@ public sealed class EnumModelComparer<TEnum> : ValueComparer<TEnum>
 3. Pack + publish `IndQuestEnums` (and `IndQuestEnums.EntityFramework`) to nuget.org.
 4. Back in EMIP: pin `IndQuestEnums` in `Src/Directory.Packages.props`, reference it from the Domain
    csproj, add `global using IndQuestEnums;`, and finish Story 1.2 Task 5 (the SmartEnums).
+
+---
+
+Maintained by [Exxerpro Solutions](https://www.exxerpro.com) — the house SmartEnum
+base shared across IndTrace, ExxerCube.Prisma, and EMIP/CubeXplorer.
