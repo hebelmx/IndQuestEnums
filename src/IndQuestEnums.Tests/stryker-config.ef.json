@@ -2,17 +2,17 @@
   "$schema": "https://raw.githubusercontent.com/stryker-mutator/stryker-net/master/src/Stryker.Core/Stryker.Core/Schemas/stryker-config.json",
   "stryker-config": {
     "project-info": {
-      "name": "IndQuestEnums",
-      "module": "IndQuestEnums"
+      "name": "IndQuestEnums.EntityFramework",
+      "module": "IndQuestEnums.EntityFramework"
     },
-    "project": "IndQuestEnums.csproj",
+    "project": "IndQuestEnums.EntityFramework.csproj",
     "test-projects": [
       "IndQuestEnums.Tests.csproj"
     ],
     "test-runner": "mtp",
     "mutate": [
-      "**/EnumModel.cs",
-      "**/EnumModelJsonConverter.cs"
+      "**/EnumModelConverter.cs",
+      "**/EnumModelComparer.cs"
     ],
     "coverage-analysis": "perTest",
     "reporters": [
