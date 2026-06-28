@@ -64,7 +64,7 @@ public class EnumModelTests
         // Assert
         result.ShouldNotBeNull();
         result.ShouldBe(StatusEnum.Invalid);
-        result.Value.ShouldBe(EnumModel.InvalidValue);
+        result.Value.ShouldBe(EnumModel.InvalidState);
         result.Name.ShouldBe(EnumModel.InvalidName);
     }
 
@@ -87,7 +87,7 @@ public class EnumModelTests
 
         // Assert
         result.ShouldNotBeNull();
-        result.Value.ShouldBe(EnumModel.InvalidValue);
+        result.Value.ShouldBe(EnumModel.InvalidState);
         result.Name.ShouldBe(EnumModel.InvalidName);
         result.DisplayName.ShouldBe(EnumModel.InvalidName);
     }

@@ -67,7 +67,7 @@ These are load-bearing decisions from ADR-0001. Preserve them in any change:
   equality for resolved instances.
 - **Conversions:** implicit `EnumModel -> int` (Value) and `EnumModel -> string` (DisplayName);
   `ToString()` returns `DisplayName`; `Deconstruct` yields `(value, name, displayName)`.
-- **Sentinels:** `InvalidValue = -1`, `InvalidName = "Invalid Value"`.
+- **Sentinels:** `InvalidState = -1`, `InvalidName = "Invalid Value"`. Resolve the *instance* with `InvalidValue<T>()` / `InvalidValue(Type)`.
 - A **parameterless `protected` ctor** sets the invalid state and satisfies the `new()` generic
   constraint the factories require.
 
@@ -78,7 +78,7 @@ using IndQuestEnums;
 
 public sealed class ZoneTag : EnumModel
 {
-    public static readonly ZoneTag Invalid = new(EnumModel.InvalidValue, EnumModel.InvalidName);
+    public static readonly ZoneTag Invalid = new(EnumModel.InvalidState, EnumModel.InvalidName);
     public static readonly ZoneTag Z1 = new(1, "Z1", "Zone 1 — production/reasoning");
     public static readonly ZoneTag Z2 = new(2, "Z2", "Zone 2 — grader/validation");
 

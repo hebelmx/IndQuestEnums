@@ -56,7 +56,7 @@ using IndQuestEnums;
 
 public sealed class ZoneTag : EnumModel
 {
-    public static readonly ZoneTag Invalid = new(EnumModel.InvalidValue, EnumModel.InvalidName);
+    public static readonly ZoneTag Invalid = new(EnumModel.InvalidState, EnumModel.InvalidName);
     public static readonly ZoneTag Z1 = new(1, "Z1", "Zone 1 — production/reasoning");
     public static readonly ZoneTag Z2 = new(2, "Z2", "Zone 2 — grader/validation");
     public static readonly ZoneTag Z3 = new(3, "Z3", "Zone 3 — held-out orchestrator");
