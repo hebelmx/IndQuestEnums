@@ -2,7 +2,7 @@
 
   <!-- Universal build settings for every project under src/ -->
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFrameworks>net10.0;net11.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
@@ -10,7 +10,7 @@
 
   <!-- Shared package/company metadata (harmless on non-packable projects) -->
   <PropertyGroup>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <Authors>Abel Briones; Exxerpro Solutions SA de CV</Authors>
     <Company>Exxerpro Solutions SA de CV</Company>
     <Product>IndQuestEnums</Product>

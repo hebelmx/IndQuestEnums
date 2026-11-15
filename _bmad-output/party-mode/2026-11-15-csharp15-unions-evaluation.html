@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMAD Party Keepsake — ADR-0003: C# 15 Unions &amp; Closed Hierarchies (IndQuestEnums)</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --warn: #f59e0b;
+      --danger: #f43f5e;
+      --ok: #10b981;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 2.5rem 1.5rem;
+      background: radial-gradient(circle at top right, #1e293b, #0f172a 70%);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
+    .container { max-width: 960px; margin: 0 auto; }
+    header {
+      border: 1px solid var(--border);
+      background: rgba(30, 41, 59, 0.85);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(244, 63, 94, 0.15);
+      color: var(--danger);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+    }
+    .badge-ok {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--ok);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      margin-left: 0.5rem;
+    }
+    h1 { margin: 0.75rem 0 0.5rem; font-size: 1.9rem; }
+    .meta { color: var(--muted); font-size: 0.92rem; }
+    .verdict-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .verdict-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem;
+    }
+    .verdict-card h3 { margin: 0 0 0.4rem; font-size: 1rem; color: var(--accent); }
+    .verdict-card p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+    .turn {
+      display: flex;
+      gap: 1rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .icon {
+      font-size: 2rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .speaker { font-weight: 700; color: var(--accent); margin-bottom: 0.25rem; }
+    .role { color: var(--muted); font-weight: 400; font-size: 0.85rem; margin-left: 0.4rem; }
+    code {
+      background: rgba(15, 23, 42, 0.7);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.88em;
+      color: #e2e8f0;
+    }
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">ADR-0003 • Opted Out</span>
+      <span class="badge-ok">net10.0;net11.0 Enabled</span>
+      <h1>IndQuestEnums — C# 15 / .NET 11 Union &amp; Closed Hierarchies Due Diligence</h1>
+      <div class="meta">Date: 2026-11-15 • Host: Abel Briones • BMAD Party Mode v6.12.4</div>
+    </header>
+
+    <div class="verdict-grid">
+      <div class="verdict-card">
+        <h3>1. Cross-Assembly Block</h3>
+        <p><code>public closed abstract class</code> restricts inheritance to the declaring assembly, preventing Domain projects from deriving from <code>EnumModel</code>.</p>
+      </div>
+      <div class="verdict-card">
+        <h3>2. Value vs. Type Identity</h3>
+        <p><code>EnumModel</code> instances are <code>static readonly</code> singletons of one <code>sealed class</code>, whereas <code>closed</code>/<code>union</code> require a distinct CLR <code>Type</code> per member.</p>
+      </div>
+      <div class="verdict-card">
+        <h3>3. Converter &amp; Factory Break</h3>
+        <p>Subclass-per-member breaks <code>where TEnum : new()</code>, <code>GetAll&lt;TEnum&gt;()</code> field reflection, EF <code>EnumModelConverter</code>, and <code>EnumModelJsonConverter</code>.</p>
+      </div>
+      <div class="verdict-card">
+        <h3>4. Source Gen Pragmatism</h3>
+        <p>Evaluated pre-agentic era; keeping <code>EnumModel</code> dependency-free and multi-targeted (<code>net10.0;net11.0</code>) delivers maximum ROI with zero ceremony.</p>
+      </div>
+    </div>
+
+    <div class="turn">
+      <div class="icon">💻</div>
+      <div>
+        <div class="speaker">Amelia <span class="role">Senior Software Engineer</span></div>
+        <div>"Putting <code>closed</code> on <code>EnumModel</code> is an immediate compiler error for every consumer assembly in IndTrace, Prisma, and EMIP. And turning enum members into nested subclasses breaks <code>where TEnum : EnumModel, new()</code>, <code>GetAll&lt;TEnum&gt;()</code> field discovery, and <code>EnumModelJsonConverter.CanConvert</code> rejecting abstract parents."</div>
+      </div>
+    </div>
+
+    <div class="turn">
+      <div class="icon">🎨</div>
+      <div>
+        <div class="speaker">Sally <span class="role">UX / Developer Experience Designer</span></div>
+        <div>"Developers look at <code>union</code> and <code>closed</code> because they want exhaustive <code>switch</code> expressions over <code>ZoneTag.Z1</code> and <code>ZoneTag.Z2</code>. But trading one-line <code>public static readonly</code> declarations for 25 nested subclasses per PLC enum would ruin the call-site ergonomics."</div>
+      </div>
+    </div>
+
+    <div class="turn">
+      <div class="icon">🏗️</div>
+      <div>
+        <div class="speaker">Winston <span class="role">System Architect</span></div>
+        <div>"Our architecture is built around a Value-Identity singleton table with O(1) <code>ConcurrentDictionary</code> lookup, bare-<code>int</code> wire serialization (~1,600×/report), and the non-throwing <code>Invalid</code> sentinel invariant. C# 15 unions and closed hierarchies are simply not mature or suited for cross-assembly SmartEnum bases."</div>
+      </div>
+    </div>
+
+    <div class="turn">
+      <div class="icon">📊</div>
+      <div>
+        <div class="speaker">Mary <span class="role">Business Analyst</span></div>
+        <div>"And as Abel noted, we already evaluated Roslyn source generators before the agentic era—technically viable, but not worth the maintenance tax then, and even less necessary now when agents and implicit <code>int</code> conversion handle the ergonomics cleanly."</div>
+      </div>
+    </div>
+
+    <div class="turn">
+      <div class="icon">📋</div>
+      <div>
+        <div class="speaker">John <span class="role">Product Manager</span></div>
+        <div>"Consistent verdict across both sibling packages (<code>IndQuestResults</code> and <code>IndQuestEnums</code>): opt out of C# 15 <code>union</code>/<code>closed</code>, record <code>ADR-0003</code>, and ship clean <code>net10.0;net11.0</code> multi-targeting."</div>
+      </div>
+    </div>
+
+    <footer>
+      BMAD Party Mode Keepsake • Exxerpro/IndQuestEnums • 2026-11-15
+    </footer>
+  </div>
+</body>
+</html>

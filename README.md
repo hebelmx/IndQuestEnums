@@ -38,10 +38,10 @@ A third copy would keep diverging. This package consolidates the **bug-fixed, O(
 IndQuestEnums/
 ├── README.md
 ├── docs/
-│   └── architecture/adr/      # ADR-0001.md, ADR-0002.md
+│   └── architecture/adr/      # ADR-0001.md, ADR-0002.md, ADR-0003.md
 ├── src/
 │   └── EnumModel.cs                         # ← provided (core; dependency-free)
-├── IndQuestEnums/                           # core csproj (net10.0, no deps)
+├── IndQuestEnums/                           # core csproj (net10.0;net11.0, no deps)
 │   └── IndQuestEnums.csproj
 ├── IndQuestEnums.EntityFramework/           # EF companion (generic converter + comparer)
 │   └── IndQuestEnums.EntityFramework.csproj

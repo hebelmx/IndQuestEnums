@@ -82,7 +82,9 @@ Backup/
 .DS_Store
 
 # BMAD generated output artifacts (planning/implementation artifacts, reports)
-_bmad-output/
+_bmad-output/*
+!_bmad-output/party-mode/
+!_bmad-output/party-mode/**
 
 # SDD (subagent-driven-development) scratch workspace
 .superpowers/

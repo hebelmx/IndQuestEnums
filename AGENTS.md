@@ -107,26 +107,28 @@ IndQuestEnums/
 ├── AGENTS.md                  # this file
 ├── README.md                  # human-facing overview
 ├── docs/
-│   └── architecture/adr/      # ADR-0001.md, ADR-0002.md
+│   └── architecture/adr/      # ADR-0001.md, ADR-0002.md, ADR-0003.md
 ├── LICENSE.txt                # MIT
 ├── global.json
 └── src/
     ├── IndQuestEnums.sln
     ├── Icon.png               # 128×128 NuGet icon (packed)  — Icon.original.png is the source asset
     ├── nupkg/                 # pack output (*.nupkg / *.snupkg)
-    ├── IndQuestEnums/                 # core csproj (net10.0, no deps)
-    │   └── EnumModel.cs
-    ├── IndQuestEnums.EntityFramework/ # EF companion
+    ├── IndQuestEnums/                 # core csproj (net10.0;net11.0, no deps)
+    │   ├── EnumModel.cs
+    │   └── EnumModelJsonConverter.cs
+    ├── IndQuestEnums.EntityFramework/ # EF companion (net10.0;net11.0)
     │   ├── EnumModelConverter.cs
     │   └── EnumModelComparer.cs
-    └── IndQuestEnums.Tests/           # xUnit v3 + Shouldly
+    └── IndQuestEnums.Tests/           # xUnit v3 + Shouldly (net10.0;net11.0)
         ├── EnumModelTests.cs
+        ├── InvalidValueAndConverterTests.cs
         └── TestEnums.cs
 ```
 
 ## Conventions
 
-- **Target framework:** `net10.0`. `Nullable=enable`, `ImplicitUsings=enable`,
+- **Target frameworks:** `net10.0;net11.0` (SDK `11.0.100` pinned in `global.json`). `Nullable=enable`, `ImplicitUsings=enable`,
   `LangVersion=latest`, `GenerateDocumentationFile=true` on packable projects.
 - **Tests:** xUnit **v3** + **Shouldly** (not FluentAssertions). Arrange/Act/Assert layout.
   Test project is `IsPackable=false`.
